@@ -328,8 +328,8 @@ Write a function called splitMe which receives a string as a parameter and retur
 Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
 */
 
-const splitMe = function (str) {
-    return str.split("");
+function splitMe(str) {
+    return str.split(" ");
 }
 
 let text = splitMe ("JavaScript is hard");
@@ -342,7 +342,16 @@ Write a function called deleteOne which receives a string and a boolean as param
 If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 */
 
+function deleteOne(a2 , b2) {
+    if (a2 === false) {
+        return (a2.slice(1));
+     } else {
+         return (a2.slice(0, a2.length -1));
+     }
+    }
 
+    let deleteLetter = deleteOne("Friday", true );
+    console.log(deleteLetter);
 
 
 
@@ -373,6 +382,14 @@ console.log("\n-------------Exercise 7-------------\n");
 Write a function called whatDayIsIt that should return the current day of the week.
 */
 
+function whatDayIsIt() {
+    let weekDays = ["Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+     let today =  new Date().getDay();
+     return (weekDays[today]);
+    }
+
+    let currentWeekDay = whatDayIsIt ();
+    console.log (currentWeekDay);
 
 
     
@@ -405,6 +422,7 @@ Write a function called howManyDays which receives a date as a parameter and ret
 */
 
 
+
 console.log("\n-------------Exercise 10-------------\n");
 /* 
 Write a function called isTodayMyBirthday which should return true if today’s your birthday, false otherwise.
@@ -429,6 +447,7 @@ Write a function called deleteProp which receives an object and a string as para
 and returns the given object after deleting its property named as the given string.
 */
 
+
 console.log("\n-------------Exercise 12-------------\n");
 /* 
 Write a function called oldestMovie which finds the oldest movie in the provided movies array.
@@ -452,11 +471,12 @@ Write a function called countMovies which returns the number of movies contained
 */
 
 function countMovies() {
-   let count = movies
+let count = movies
    for (let i = 0; i < movies.length; i++) {
     count++;
-    
-   }}
+     (movies.length);
+      } return count
+    }
 console.log (countMovies())
 
 
@@ -465,31 +485,64 @@ console.log("\n-------------Exercise 14-------------\n");
 Write a function called onlyTheTitles which creates an array with just the titles of the movies contained in the provided movies array.
 */
 
+function onlyTheTitles() {
+    let movieTitles = movies
+    for (let i = 0; i < movies.length; i++) {
+        movieTitles[i] = movies[i].Title;
+        } return movieTitles
+    }
+console.log(onlyTheTitles());
 
-
-/* EXERCISE 15
-
+console.log("\n-------------Exercise 15-------------\n");
+/* 
 Write a function called onlyInThisMillennium which returns only the movies produced in this millennium from the provided movies array.
 
 */
+function onlyInThisMillenium() {
+    let fromThisMillenium = movies
+    for ( let i = 0; i < movies.length; i++) {
+        if (2000 < movies[i].Year) {
+        fromThisMillenium = movies[i]; 
+    }
+} return fromThisMillenium
+    
+} console.log(onlyInThisMillenium())
 
+console.log("\n-------------Exercise 16-------------\n");
 /* EXERCISE 16
-
 Write a function called getMovieById which receives an id as a parameter and returns the movie with the given id from the provided movies array.
-
 */
 
-/* EXERCISE 17
+function getMovieById(id) {
+    let movieId 
+    for (let i = 0; i < movies.length; i++) {
+       if (id === movies[i].imdbID) {
+        movieId = movies[i]}
+        } return movieId
+    } 
+     console.log (getMovieById("t0848228"))
+  
 
+ console.log("\n-------------Exercise 17-------------\n");
+/* 
 Write a function called sumAllTheYears which returns the sum of all the years in which the movies in the provided movies array have been produced.
-
 */
+
+function sumAllTheYears() {
+    let allTheYears 
+    for (let i = 0; i < movies.length; i++) {
+        allTheYears + parseInt(movies[i].Year);
+    } return allTheYears
+}
+console.log (sumAllTheYears())
+
 
 /* EXERCISE 18
 
 Write a function called searchByTitle which receives a string as a parameter and returns all the movies in the provided movies array which contain that string in the title.
 
 */
+
 
 /* EXERCISE 19
 
