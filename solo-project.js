@@ -421,6 +421,12 @@ console.log("\n-------------Exercise 9-------------\n");
 Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
 */
 
+function howManyDays(date) {
+    let currentDay = new Date (date.getTime());
+    let pastDay = new Date (date.getFullYear(), 0, 1);
+    return Math.ceil((currentDay - pastDay + 1) / 8640000); 
+}
+console.log(howManyDays(new Date(2022,01,01)));
 
 
 console.log("\n-------------Exercise 10-------------\n");
@@ -471,13 +477,13 @@ Write a function called countMovies which returns the number of movies contained
 */
 
 function countMovies() {
-let count = movies
-   for (let i = 0; i < movies.length; i++) {
-    count++;
-     (movies.length);
-      } return count
-    }
-console.log (countMovies())
+    let num = 0
+    for (let i = 0; i < movies.length; i++) {
+        num++  
+    } 
+    return num 
+}
+console.log(countMovies())
 
 
 console.log("\n-------------Exercise 14-------------\n");
@@ -486,11 +492,11 @@ Write a function called onlyTheTitles which creates an array with just the title
 */
 
 function onlyTheTitles() {
-    let movieTitles = movies
+    let movieTitles = movies 
     for (let i = 0; i < movies.length; i++) {
         movieTitles[i] = movies[i].Title;
-        } return movieTitles
-    }
+    } return movieTitles
+}
 console.log(onlyTheTitles());
 
 console.log("\n-------------Exercise 15-------------\n");
@@ -498,15 +504,17 @@ console.log("\n-------------Exercise 15-------------\n");
 Write a function called onlyInThisMillennium which returns only the movies produced in this millennium from the provided movies array.
 
 */
-function onlyInThisMillenium() {
-    let fromThisMillenium = movies
-    for ( let i = 0; i < movies.length; i++) {
-        if (2000 < movies[i].Year) {
-        fromThisMillenium = movies[i]; 
+function onlyInThisMillennium() {
+    let fromThisMillenium = [];
+    for (i = 0; i < movies.length; i++) {
+      if (movies[i].Year >= 2001) {
+        fromThisMillenium [i] = movies[i];
+      }
     }
-} return fromThisMillenium
-    
-} console.log(onlyInThisMillenium())
+    return fromThisMillenium;
+  }
+  
+  console.log(onlyInThisMillennium());
 
 console.log("\n-------------Exercise 16-------------\n");
 /* EXERCISE 16
@@ -514,34 +522,42 @@ Write a function called getMovieById which receives an id as a parameter and ret
 */
 
 function getMovieById(id) {
-    let movieId 
+    let moviesId;
     for (let i = 0; i < movies.length; i++) {
-       if (id === movies[i].imdbID) {
-        movieId = movies[i]}
-        } return movieId
-    } 
-     console.log (getMovieById("t0848228"))
+      if (movies[i].imdbID === id) {
+        return moviesId = movies[i];
+      }
+    }
+}
+  console.log (getMovieById("tt0848228"));
   
 
  console.log("\n-------------Exercise 17-------------\n");
 /* 
 Write a function called sumAllTheYears which returns the sum of all the years in which the movies in the provided movies array have been produced.
 */
-
 function sumAllTheYears() {
-    let allTheYears 
+    let allTheYears = 0;
     for (let i = 0; i < movies.length; i++) {
-        allTheYears + parseInt(movies[i].Year);
-    } return allTheYears
+       allTheYears += parseInt(movies[i].Year);
+    } return allTheYears;
 }
-console.log (sumAllTheYears())
+console.log (sumAllTheYears());
 
 
-/* EXERCISE 18
-
+console.log("\n-------------Exercise 18-------------\n");
+/* 
 Write a function called searchByTitle which receives a string as a parameter and returns all the movies in the provided movies array which contain that string in the title.
-
 */
+function searchByTitle(str) {
+    let whichMovie = 0;
+    for (let i = 0; i < movies.length; i++) {
+      if (movies[i].Title === str) {  
+      }   return whichMovie = movies [i];
+    }  
+  }
+  console.log (searchByTitle("The"));
+  
 
 
 /* EXERCISE 19
